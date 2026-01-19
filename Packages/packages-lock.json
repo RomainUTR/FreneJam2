@@ -7,6 +7,15 @@
       "dependencies": {},
       "hash": "d4866e3d29a3178f65050fba1b451fc6dded3fd6"
     },
+    "com.singularitygroup.hotreload": {
+      "version": "file:com.singularitygroup.hotreload",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "10.2.2",
       "depth": 1,
