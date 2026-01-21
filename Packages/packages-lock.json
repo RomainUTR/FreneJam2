@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.romainutr.sltoolbox": {
-      "version": "https://github.com/RomainUTR/SLToolbox.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "d4866e3d29a3178f65050fba1b451fc6dded3fd6"
-    },
     "com.singularitygroup.hotreload": {
       "version": "file:com.singularitygroup.hotreload",
       "depth": 0,
