@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 652943612}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Sun
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
   initialGravity: 3
   pushForce: 15
   rotationSpeed: 50
-  difficulty: 0.5
+  difficulty: 0.45
 --- !u!96 &652943612
 TrailRenderer:
   serializedVersion: 3
@@ -595,6 +595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126418826}
+  - component: {fileID: 1126418830}
   - component: {fileID: 1126418825}
   - component: {fileID: 1126418824}
   - component: {fileID: 1126418829}
@@ -724,6 +725,23 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1126418830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126418823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034a7176f0b29ff4db1aaa15373c2952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sun: {fileID: 2053114938}
+  ship: {fileID: 652943610}
+  minSize: 5
+  sensitivity: 0.5
+  smoothing: 2
 --- !u!1 &1131933108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1141256635184275715, guid: 7cf0d684b88ba6c44ae1c18fd3453901, type: 3}
@@ -814,7 +832,7 @@ GameObject:
   - component: {fileID: 2053114939}
   m_Layer: 0
   m_Name: Sun
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
