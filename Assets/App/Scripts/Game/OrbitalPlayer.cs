@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OrbitalPlayer : MonoBehaviour
 {
@@ -14,10 +15,30 @@ public class OrbitalPlayer : MonoBehaviour
     [ReadOnly] public float currentGravity;
     public bool isDead = false;
 
+    private InputSystem_Actions ctx;
+
+    private void OnEnable()
+    {
+        ctx = new InputSystem_Actions();
+        ctx.Enable();
+    }
+
+    private void OnDisable()
+    {
+        ctx.Disable();
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentGravity = initialGravity;
+
+        string rebinds = PlayerPrefs.GetString("rebinds", string.Empty);
+        if (!string.IsNullOrEmpty(rebinds))
+        {
+            ctx.LoadBindingOverridesFromJson(rebinds);
+        }
+        Debug.Log(ctx.ToString());
     }
 
     private void Update()
@@ -26,7 +47,7 @@ public class OrbitalPlayer : MonoBehaviour
 
         currentGravity += difficulty * Time.deltaTime;
 
-        if(Input.GetKey(KeyCode.Space))
+        if(ctx.Gameplay.Thrust.IsPressed())
         {
             ApplyPush();
         }
