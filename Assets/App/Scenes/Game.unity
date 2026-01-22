@@ -763,7 +763,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -829,6 +829,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4077809941698836003, guid: 15bf2d41af7704a5d832f3f9945d3962, type: 3}
+      propertyPath: transitionFadeInDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077809941698836003, guid: 15bf2d41af7704a5d832f3f9945d3962, type: 3}
+      propertyPath: transitionFadeOutDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5635490281355404099, guid: 15bf2d41af7704a5d832f3f9945d3962, type: 3}
       propertyPath: m_Name
       value: AudioManager
