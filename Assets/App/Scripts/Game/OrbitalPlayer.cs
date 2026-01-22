@@ -5,14 +5,14 @@ public class OrbitalPlayer : MonoBehaviour
 {
     [SerializeField, Required] private Transform sunCenter;
     [SerializeField] private float initialGravity = 5f;
-    [SerializeField] private float pushForce = 15f;
+    public float pushForce = 15f;
     [SerializeField] private float rotationSpeed = 50f;
 
     [SerializeField] private float difficulty = 0.5f;
 
     private Rigidbody2D rb;
-    private float currentGravity;
-    private bool isDead = false;
+    [ReadOnly] public float currentGravity;
+    public bool isDead = false;
 
     private void Start()
     {
@@ -63,14 +63,5 @@ public class OrbitalPlayer : MonoBehaviour
         Vector2 tangent = new Vector2(-directionToSun.y, directionToSun.x);
 
         rb.AddForce(tangent * rotationSpeed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sun"))
-        {
-            isDead = true;
-            Debug.Log("Game Over! Score : " + Time.timeSinceLevelLoad);
-        }
     }
 }
