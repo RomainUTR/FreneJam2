@@ -83,4 +83,12 @@ crashlytics-build.properties
 # But keep the demo packages themselves.
 !/Assets/Plugins/Sirenix/Demos/*.unitypackage 
 
+# Idea
 .idea/
+
+# Visual Studio Code
+.vscode/
+.vsconfig
+
+# macOS
+.DS_Store
