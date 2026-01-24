@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +16,7 @@ public class OrbitalPlayer : MonoBehaviour
     public bool isDead = false;
 
     private InputSystem_Actions ctx;
-    public PlayerFeedback feedback;
+    [SerializeField, Required] private PlayerFeedback feedback;
 
     private void OnEnable()
     {

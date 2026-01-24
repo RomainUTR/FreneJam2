@@ -1,13 +1,14 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class CameraZoom : MonoBehaviour
 {
-    public Transform sun;
-    public Transform ship;
+    [SerializeField, Required] private Transform sun;
+    [SerializeField, Required] private Transform ship;
 
-    public float minSize = 5f;
-    public float sensitivity = 0.5f;
-    public float smoothing = 2f;
+    [SerializeField] private float minSize = 5f;
+    [SerializeField] private float sensitivity = 0.5f;
+    [SerializeField] private float smoothing = 2f;
 
     private Camera cam;
 

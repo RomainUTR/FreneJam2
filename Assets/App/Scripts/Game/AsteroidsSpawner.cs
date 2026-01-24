@@ -1,23 +1,24 @@
 using DG.Tweening;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class AsteroidsSpawner : MonoBehaviour
 {
-    public GameObject asteroidPrefab;
-    public Transform sunTransform;
-    public float spawnRadius = 12f;
+    [SerializeField, Required] private GameObject asteroidPrefab;
+    [SerializeField, Required] private Transform sunTransform;
+    [SerializeField] private float spawnRadius = 12f;
 
-    public float minLaunchSpeed = 2f;
-    public float maxLaunchSpeed = 6f;
-    public float trajectoryChaos = 0.3f;
+    [SerializeField] private float minLaunchSpeed = 2f;
+    [SerializeField] private float maxLaunchSpeed = 6f;
+    [SerializeField] private float trajectoryChaos = 0.3f;
 
-    public float spawnRate = 2f;
-    public float difficultyFactor = 0.98f;
-    public float minSpawnRate = 0.5f;
+    [SerializeField] private float spawnRate = 2f;
+    [SerializeField] private float difficultyFactor = 0.98f;
+    [SerializeField] private float minSpawnRate = 0.5f;
 
-    public GameObject bonusPrefab;
-    public float bonusChance = 0.1f;
-    public float automaticDespawnBonus = 15f;
+    [SerializeField, Required] private GameObject bonusPrefab;
+    [SerializeField] private float bonusChance = 0.1f;
+    [SerializeField] private float automaticDespawnBonus = 15f;
 
     private float nextSpawnTime;
 

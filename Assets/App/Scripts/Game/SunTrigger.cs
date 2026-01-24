@@ -1,8 +1,10 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class SunTrigger : MonoBehaviour
 {
-    public GameManager gameManager;
+    [SerializeField, Required] private GameManager gameManager;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision with" +  collision.gameObject.name);
@@ -15,7 +17,6 @@ public class SunTrigger : MonoBehaviour
             OrbitalPlayer player = collision.GetComponent<OrbitalPlayer>();
             player.isDead = true;
             player.GetComponent<BoxCollider2D>().enabled = false;
-            //isDead = true;
             gameManager.TriggerGameOver();
         }
     }

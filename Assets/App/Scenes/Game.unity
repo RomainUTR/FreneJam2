@@ -2802,7 +2802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5742667304462670762, guid: 1faa8bc5c126b491885b05cefb5ac331, type: 3}
       propertyPath: bonusChance
-      value: 0.5
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 5742667304462670762, guid: 1faa8bc5c126b491885b05cefb5ac331, type: 3}
       propertyPath: sunTransform

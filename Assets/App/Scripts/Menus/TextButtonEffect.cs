@@ -8,9 +8,9 @@ public class TextButtonEffect : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private TMP_Text textMesh;
     private string originalText;
 
-    public Color normalColor = Color.white;
-    public Color hoverColor = new Color(1f, 0.5f, 0f);
-    public bool useBracket = true;
+    [SerializeField] private Color normalColor = Color.white;
+    [SerializeField] private Color hoverColor = new Color(1f, 0.5f, 0f);
+    [SerializeField] private bool useBracket = true;
 
     private void Start()
     {
@@ -24,8 +24,6 @@ public class TextButtonEffect : MonoBehaviour, IPointerEnterHandler, IPointerExi
         textMesh.DOColor(hoverColor, 0.2f);
         transform.DOScale(1.1f, 0.2f);
         if (useBracket) textMesh.text = "> " + originalText + " <";
-
-        // TODO SFX
     }
 
     public void OnPointerExit(PointerEventData eventData)

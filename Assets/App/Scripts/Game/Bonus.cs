@@ -12,11 +12,11 @@ public class Bonus : MonoBehaviour
 {
     [EnumToggleButtons, ReadOnly] public BonusType bonusType;
 
-    public float pushBoostAmount = 2f;
-    public float gravityReductionAmount = 0.5f;
+    [SerializeField] private float pushBoostAmount = 2f;
+    [SerializeField] private float gravityReductionAmount = 0.5f;
 
-    public Sprite pushSprite;
-    public Sprite gravitySprite;
+    [SerializeField, Required] private Sprite pushSprite;
+    [SerializeField, Required] private Sprite gravitySprite;
 
     void Start()
     {
@@ -76,7 +76,7 @@ public class Bonus : MonoBehaviour
                 break;
 
             case BonusType.LessGravity:
-                player.currentGravity = Mathf.Max(0.5f, player.currentGravity - gravityReductionAmount);
+                player.currentGravity = Mathf.Max(0.5f, player.currentGravity * gravityReductionAmount);
                 Debug.Log("UPGRADE: Le vaisseau est plus léger !");
                 break;
         }

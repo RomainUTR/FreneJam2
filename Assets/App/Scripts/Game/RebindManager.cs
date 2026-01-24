@@ -1,12 +1,13 @@
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class RebindManager : MonoBehaviour
 {
-    public InputActionReference actionToRebind;
-    public TMP_Text buttonText;
-    public string bindingName = "Thrust";
+    [SerializeField, Required] private InputActionReference actionToRebind;
+    [SerializeField, Required] private TMP_Text buttonText;
+    [SerializeField] private string bindingName = "Thrust";
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
 
@@ -42,8 +43,6 @@ public class RebindManager : MonoBehaviour
         string rebinds = actionToRebind.action.SaveBindingOverridesAsJson();
         PlayerPrefs.SetString("rebinds", rebinds);
         PlayerPrefs.Save();
-
-        Debug.Log("New input saved");
     }
 
     void UpdateUI()

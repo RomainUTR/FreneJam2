@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class AudioController : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public Slider musicSlider, sfxSlider;
+    [SerializeField, Required] private AudioMixer audioMixer;
+    [SerializeField, Required] private Slider musicSlider, sfxSlider;
 
     private void OnEnable()
     {
+        audioMixer.SetFloat("MasterPitch", 1f);
+        audioMixer.SetFloat("LowPass", 22000f);
+
         float musicVolumeLin = GamePrefs.GetMusicVolume();
         SetMusicVolumeInternal(musicVolumeLin);
         musicSlider.value = musicVolumeLin;

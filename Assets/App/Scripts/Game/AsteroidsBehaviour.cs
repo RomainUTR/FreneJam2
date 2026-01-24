@@ -1,11 +1,12 @@
 using UnityEngine;
 using RomainUTR.SLToolbox.Runtime;
+using Sirenix.OdinInspector;
 
 public class AsteroidsBehaviour : MonoBehaviour
 {
-    public float gravityStrength = 30f;
+    [SerializeField] public float gravityStrength = 30f;
 
-    public Sprite[] sprites;
+    [SerializeField] private Sprite[] sprites;
 
     private Transform sunCenter;
     private Rigidbody2D rb;

@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     private const string HighScore_Key = "BestScore";
     private bool isGameOver = false;
 
-    public Volume globalVolume;
-    public AudioMixer mainMixer;
+    [SerializeField, Required] private Volume globalVolume;
+    [SerializeField, Required] private AudioMixer mainMixer;
 
     private void Start()
     {
@@ -141,8 +141,6 @@ public class GameManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        mainMixer.SetFloat("MasterPitch", 1f);
-        mainMixer.SetFloat("LowPass", 22000f);
         DOTween.KillAll();
         SceneManager.LoadScene("Main");
     }
