@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusType: 0
-  pushBoostAmount: 2
-  gravityReductionAmount: 0.5
+  pushBoostAmount: 3
+  gravityReductionAmount: 0.7
   pushSprite: {fileID: 21300000, guid: e4d6756b26ee9a44780da4a7d5f5a6ba, type: 3}
   gravitySprite: {fileID: 21300000, guid: f07ac6166cf6d804b8638ffe948e6523, type: 3}
 --- !u!212 &3116940986582708338

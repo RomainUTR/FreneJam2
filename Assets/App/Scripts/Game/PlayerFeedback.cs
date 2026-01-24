@@ -29,7 +29,7 @@ public class PlayerFeedback : MonoBehaviour
         isThrusting = thrustInput;
         float deltaTime = Time.deltaTime * transitionSpeed;
 
-        float targetFreq = isThrusting ? 22000f : 500f;
+        float targetFreq = isThrusting ? 22000f : 1000f;
         float currentFreq;
         mainMixer.GetFloat("LowPass", out currentFreq);
         float newFreq = Mathf.Lerp(currentFreq, targetFreq, deltaTime);

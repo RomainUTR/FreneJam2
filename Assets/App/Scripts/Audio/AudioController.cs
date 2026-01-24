@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider, sfxSlider;
 
-    private void Start()
+    private void OnEnable()
     {
         float musicVolumeLin = GamePrefs.GetMusicVolume();
         SetMusicVolumeInternal(musicVolumeLin);

@@ -138,4 +138,12 @@ public class GameManager : MonoBehaviour
         DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void BackToMenu()
+    {
+        mainMixer.SetFloat("MasterPitch", 1f);
+        mainMixer.SetFloat("LowPass", 22000f);
+        DOTween.KillAll();
+        SceneManager.LoadScene("Main");
+    }
 }

@@ -1732,7 +1732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.1, y: -123.08}
+  m_AnchoredPosition: {x: 42.46, y: -123.08}
   m_SizeDelta: {x: 300, y: 60.07}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1185335036
@@ -2505,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1ba60a6c95a39474b853d00efbc05bec, type: 2}
     - target: {fileID: 1234170177727591266, guid: 7cf0d684b88ba6c44ae1c18fd3453901, type: 3}
       propertyPath: musicLayers.Array.data[0].localVolume
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8277518216330964169, guid: 7cf0d684b88ba6c44ae1c18fd3453901, type: 3}
       propertyPath: m_LocalPosition.x
