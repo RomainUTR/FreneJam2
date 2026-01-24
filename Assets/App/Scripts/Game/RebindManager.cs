@@ -48,7 +48,6 @@ public class RebindManager : MonoBehaviour
     void UpdateUI()
     {
         string keyName = actionToRebind.action.GetBindingDisplayString(0);
-        Debug.Log(keyName);
         buttonText.text = $"{bindingName}: [{keyName}]";
     }
 }
