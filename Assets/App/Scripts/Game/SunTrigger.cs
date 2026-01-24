@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SunTrigger : MonoBehaviour
 {
+    public GameManager gameManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision with" +  collision.gameObject.name);
@@ -15,7 +16,7 @@ public class SunTrigger : MonoBehaviour
             player.isDead = true;
             player.GetComponent<BoxCollider2D>().enabled = false;
             //isDead = true;
-            Debug.Log("Game Over! Score : " + Time.timeSinceLevelLoad);
+            gameManager.TriggerGameOver();
         }
     }
 }

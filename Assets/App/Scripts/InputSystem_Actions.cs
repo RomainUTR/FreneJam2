@@ -1053,17 +1053,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8d16717a-d121-4d6c-b92f-ce68fd31d0ea"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Thrust"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0016bf15-dd01-4a8a-9851-b4e381f83016"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",

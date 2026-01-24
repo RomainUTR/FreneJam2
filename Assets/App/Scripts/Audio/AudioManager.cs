@@ -133,15 +133,28 @@ public class AudioManager : MonoBehaviour
 
     IEnumerator ChangeAmbianceMusicDelay(MusicTrack[] musicDatas)
     {
+        List<AudioSource> sourcesToDestroy = new List<AudioSource>();
+        for (int i = initialMusicCount; i < playlistAudios.Count; i++)
+        {
+            if (playlistAudios[i] != null)
+            {
+                sourcesToDestroy.Add(playlistAudios[i]);
+            }
+        }
+
         if (playlistAudios.Count > initialMusicCount)
         {
-            for (int i = initialMusicCount; i < playlistAudios.Count; i++)
-            {
-                playlistAudios[i].DOFade(0, transitionFadeOutDelay).OnComplete(() =>
+            playlistAudios.RemoveRange(initialMusicCount, playlistAudios.Count - initialMusicCount);
+        }
+
+        foreach (AudioSource source in sourcesToDestroy)
+        {
+            source.DOFade(0, transitionFadeOutDelay)
+                .SetLink(source.gameObject)
+                .OnComplete(() =>
                 {
-                    Destroy(playlistAudios[i].gameObject);
+                    if (source != null) Destroy(source.gameObject);
                 });
-            }
         }
 
         yield return new WaitForSeconds(transitionFadeOutDelay);
@@ -150,17 +163,19 @@ public class AudioManager : MonoBehaviour
         {
             if (track.music == null) continue;
 
-            AudioSource source = CreatePlaylistAudioSource();
-            source.clip = track.music.clip;
-            source.loop = track.music.isLooping;
-            source.volume = 0f;
+            AudioSource newSource = CreatePlaylistAudioSource();
+            newSource.clip = track.music.clip;
+            newSource.loop = track.music.isLooping;
+            newSource.volume = 0f;
 
-            source.Play();
-            float finalVolume = track.music.volumMultiplier * track.localVolume;
+            newSource.Play();
 
-            source.DOFade(finalVolume, transitionFadeInDelay);
+            float finalVolume = (track.music.volumMultiplier > 0 ? track.music.volumMultiplier : 1f) * track.localVolume;
 
-            playlistAudios.Add(source);
+            newSource.DOFade(finalVolume, transitionFadeInDelay)
+                .SetLink(newSource.gameObject);
+
+            playlistAudios.Add(newSource);
         }
     }
 }

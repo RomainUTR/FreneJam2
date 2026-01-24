@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,7 @@ public class OrbitalPlayer : MonoBehaviour
     public bool isDead = false;
 
     private InputSystem_Actions ctx;
+    public PlayerFeedback feedback;
 
     private void OnEnable()
     {
@@ -47,7 +49,14 @@ public class OrbitalPlayer : MonoBehaviour
 
         currentGravity += difficulty * Time.deltaTime;
 
-        if(ctx.Gameplay.Thrust.IsPressed())
+        bool isPressing = ctx.Gameplay.Thrust.IsPressed();
+
+        if (feedback != null)
+        {
+            feedback.UpdateFeedback(isPressing);
+        }
+
+        if (isPressing)
         {
             ApplyPush();
         }
